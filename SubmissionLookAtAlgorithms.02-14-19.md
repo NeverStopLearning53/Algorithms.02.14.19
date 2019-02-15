@@ -32,36 +32,29 @@ Instead of searching an array at index 0, 1, 2, 3, 4, and so on like we do in a 
 #### **3. Code an implementation of Bubble Sort and test it on an integer array of your choice.**
 
 ```
-function bubble_Sort(a)
-{
-    var swapp;
+function bubble_Sort(listofNumbers) {
     
-    var n = a.length-1;
-    //example n = 14
-    console.log(a.length-1);
-    var x=a; // 
-    do {
-        swapp = false;
-        console.log(swapp); // in my test run of the code with a 15 items array this printed out 11 times
-        for (var i=0; i < n; i++)
+  var swapp;
+  var n = listofNumbers.length-1;
+  do {
+     swapp = false;
+     for (var i=0; i < n; i++)
  //Using a for loop it starts with i = 0 then keeps running (adding 1 to i each loop until i < (the length of the array - 1) )         
-        {
-          console.log(i);
-            if (x[i] < x[i+1]) //if x[i] is less than x[i+1] then execute this block of code
-            {
-               var temp = x[i];
-               x[i] = x[i+1];
-               x[i+1] = temp;
-               swapp = true;
-            }
-        }
-        n--; // decrement n by 1
+     {
+         if (listofNumbers[i] < listofNumbers[i+1]) //if listofNumbers[i] is less than listofNumbers[i+1] then execute this block of code
+         {
+            var temp = listofNumbers[i];
+            listofNumbers[i] = listofNumbers[i+1];
+            listofNumbers[i+1] = temp;
+            swapp = true;
+          }
+     }
+     n--; // decrement n by 1
     } while (swapp); // the while executes thru a block of code as long as the specified condition is true
- console.log("Test1 " + swapp); // this only ran once in my first test
- return x; 
+  return listofNumbers; 
 }
 
-console.log(bubble_Sort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]));
+console.log(bubble_Sort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]))
 ```
 
 
